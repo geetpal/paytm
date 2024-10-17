@@ -1,9 +1,12 @@
-"useClient"
+"use client"
 
+import { SessionProvider } from "next-auth/react"
 import { RecoilRoot } from "recoil"
 
 export const Providers = ({children}:{children: React.ReactNode}) => {
     return <RecoilRoot>
-                {children}
+                <SessionProvider>
+                    {children}
+                </SessionProvider>
             </RecoilRoot>
 }
