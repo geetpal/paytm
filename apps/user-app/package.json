@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@repo/ui": "*",
     "@repo/db": "*",
     "@repo/store": "*",
-    "@repo/ui": "*",
     "bcrypt": "^5.1.1",
     "next": "14.2.6",
     "next-auth": "^4.24.8",

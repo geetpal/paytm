@@ -1,5 +1,5 @@
 import CredentialsProvider from "next-auth/providers/credentials"
-import * as db from "@repo/db/client"
+import db from "@repo/db/client"
 import bcrypt from "bcrypt"
 
 
@@ -13,7 +13,7 @@ export const authOptions = {
             },
             async authorize(credentials: any) {
                 const hashedPassword = await bcrypt.hash(credentials.password, 10);
-                const existingUser = await db.User.findFirst({
+                const existingUser = await db.user.findFirst({
                     where: { number: credentials.phone }
                 })
                 if (existingUser) {
@@ -30,7 +30,7 @@ export const authOptions = {
 
                 try {
                     //Create user
-                    const user = await db.User.create({
+                    const user = await db.user.create({
                         data: {
                             number: credentials.phone,
                             password: hashedPassword
