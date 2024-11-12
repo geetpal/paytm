@@ -11,8 +11,10 @@ export const authOptions = {
                 phone: { label: "Phone number", type: "text", placeholder: "xxx-xxx-xxxx" },
                 password: { label: "Password", type: "password", placeholder: "*********" }
             },
+            //Note: Authorized is the function that gets called anytime we click on Submit Button which in this case is "Sign in with Credentials"
             async authorize(credentials: any) {
-                const hashedPassword = await bcrypt.hash(credentials.password, 10);
+                // Here we can do ZOD validations, OTP validations
+                const hashedPassword = await bcrypt.hash(credentials.password, 10); //Converts the password into a hash 
                 const existingUser = await db.user.findFirst({
                     where: { number: credentials.phone }
                 })
