@@ -5,13 +5,15 @@ const app = express()
 app.use(express.json())
 
 app.post("/hdfcWebhook", async (req, res) => {
+    //TODO: Add zod validation here?
+    //TODO: Bank should ideally send a secret so we know its sent by them
+    //TODO: Check if onRamptransaction is processing or not
+    
     const paymentInformation: {
         token: string;
         userId: string;
         amount: string
     } = {
-
-        //TODO: Add zod validation here?
         token: req.body.token,
         userId: req.body.userId,
         amount: req.body.amount
