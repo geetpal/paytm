@@ -25,9 +25,6 @@ jobs:
       - name: Install Dependencies
         run: npm install
       
-      - name: Build UI
-        run: npm run build --workspace=@repo/ui
-      
       - name: Generate Prisma Client
         run: npm run db:generate
       
