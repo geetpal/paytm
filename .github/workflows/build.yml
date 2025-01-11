@@ -1,8 +1,11 @@
 name: Build on PR
 
 on:
+  push:
+    branches:
+      - main
   pull_request:
-    brnaches:
+    branches:
       - main
 
 jobs:
