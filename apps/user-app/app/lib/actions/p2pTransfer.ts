@@ -9,9 +9,10 @@ export async function p2pTransfer(amount: number, to: string) {
     const session = await getServerSession(authOptions);
     const fromUser = session?.user?.id;
 
+    const notLogged = "User not logged in"
     if (!fromUser) {
         return {
-            message: "User not logged in"
+            notLogged
         }
     }
 
@@ -21,9 +22,10 @@ export async function p2pTransfer(amount: number, to: string) {
         }
     });
 
+    const message = "User not found"
     if (!toUser) {
         return {
-            message: "User not found"
+            message
         }
     }
     try {
@@ -64,10 +66,11 @@ export async function p2pTransfer(amount: number, to: string) {
             //         isolationLevel: 'Serializable',
             //     }
         )
+        const success = "Transfer Successful"
         return {
-            message: "Transfer Successful"
+            success
         }
     } catch (error) {
-        message: error || "Tranfer error"
+        error || "Tranfer error"
     }
 }
