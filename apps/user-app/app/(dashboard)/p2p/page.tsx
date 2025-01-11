@@ -24,7 +24,7 @@ export default async function(){
     const p2ptransactions = await getP2PTransactions();
 
     return <div className="w-full">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 p-4">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 p-4 bg-slate-500">
                     <div>
                     <SendCard />
                     </div>
