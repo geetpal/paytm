@@ -8,7 +8,7 @@ module.exports = {
     "eslint:recommended",
     "prettier",
     require.resolve("@vercel/style-guide/eslint/next"),
-    "turbo",
+    "eslint-config-turbo",
   ],
   globals: {
     React: true,
@@ -32,4 +32,5 @@ module.exports = {
     "node_modules/",
   ],
   overrides: [{ files: ["*.js?(x)", "*.ts?(x)"] }],
+
 };
