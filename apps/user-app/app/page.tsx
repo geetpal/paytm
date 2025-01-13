@@ -8,9 +8,18 @@ export default async function Page() {
     redirect('/dashboard')
   } else {
     redirect('/api/auth/signin')
-  }
-  
+  } 
 }
+
+
+
+
+
+
+
+
+
+
 // "use client"
 // import Image from "next/image";
 // import { Button } from "@repo/ui/button";
